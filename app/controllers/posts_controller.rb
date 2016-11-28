@@ -1,18 +1,21 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show    
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post= Post.new(post_params)
+    @post= current_user.posts.build(post_params)
 
     if @post.save
       redirect_to posts_path
@@ -49,5 +52,12 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:caption, :image)
+    end
+
+    def require_same_user
+      unless current_user == @post.user
+        flash[:danger] = "You can edit or delete only you Pic!"
+        redirect_to new_user_session_path
+      end
     end
 end

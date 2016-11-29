@@ -1,18 +1,5 @@
 .posts-wrapper
-  -@posts.each do |post|
-    .post
-      .post-head
-        .thumb-img
-        .user-name
-          = post.user.user_name
-        .time-ago
-          = post.created_at.to_time.strftime('%B %e at %l:%M %p')
-      .image.center-block
-        =link_to (image_tag post.image.url(:medium), class:'img-responsive'),
-                   post_path(post)
-        %span
-          %i.fa.fa-comments-o
-          = pluralize(post.comment_threads.count, "Comment")
+  = render 'posts'
       
 #paginator.text-center      
   = paginate @posts

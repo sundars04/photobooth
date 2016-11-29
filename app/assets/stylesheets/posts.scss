@@ -25,6 +25,10 @@
   .thumbnail {}
   .name {
     display: block;
+    text-align: center;
+    a {
+    text-decoration: none;
+    }    
   }
 }
 .image {
@@ -37,6 +41,7 @@
   padding: 24px 24px;
   font-size: 15px;
   line-height: 18px;
+  text-align: center;
 }
 /* ## Wrapper and styling for the new and edit views ## */
 .form-wrapper {

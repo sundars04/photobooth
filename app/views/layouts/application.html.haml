@@ -25,7 +25,9 @@
             %li
               = link_to "New Pic", new_post_path 
           %ul.nav.navbar-nav.navbar-right
-            - if signed_in?            
+            - if signed_in?
+              / %li
+              /   = link_to "My Profile", profile_path(@user.user_name)
               %li.dropdown
                 %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                   = current_user.user_name

@@ -20,6 +20,7 @@ gem 'acts_as_commentable_with_threading'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 gem 'jquery-turbolinks'
 gem 'font-awesome-sass', '~> 4.7.0'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

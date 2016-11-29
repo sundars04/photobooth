@@ -7,7 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
 
-  def show    
+  def show
+    @new_comment = Comment.build_from(@post, current_user, "")
   end
 
   def new

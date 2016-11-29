@@ -16,7 +16,10 @@ gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise'
 gem 'devise-bootstrapped'
-gem 'acts_as_commentable_with_threading' 
+gem 'acts_as_commentable_with_threading'
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+gem 'jquery-turbolinks'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

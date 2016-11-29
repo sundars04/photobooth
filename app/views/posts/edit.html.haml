@@ -1,6 +1,4 @@
 %h1 Update Pic
-.text-center
-  = image_tag @post.image.url(:medium)
 = render 'form'
 .text-center.edit-links  
   = link_to "[ cancel ]", post_path(@post)
